@@ -13,20 +13,7 @@ explicit data quality flags on every record.
 
 A four-zone medallion architecture on AWS:
 
-```
-   RAW          →     BRONZE         →     SILVER         →      GOLD         →    ATHENA
-   (S3)               (S3)                 (S3)                 (S3)              (queries)
-
- Original           Typed Parquet        Cleaned,             Reconciled
- evidence           with lineage         conformed            analytics
- files              and DQ flags         business             tables
-                                         entities
-
- Object Lock        Glue Python          Glue Visual          Glue Visual
- 7-year retention   Shell job            ETL pipeline         ETL pipeline
- SSE-KMS            (Textract +          (filter,             (aggregate,
-                    pandas)              standardize)         reconcile)
-```
+![Architecture](screenshots/architecture.png)
 
 | Zone | Purpose | Recovery |
 |---|---|---|
