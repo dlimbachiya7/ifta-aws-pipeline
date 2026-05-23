@@ -1,0 +1,25 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+!example.tfvars
+.terraform.tfstate.lock.info
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Local outputs
+*.log
